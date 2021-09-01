@@ -5,7 +5,11 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
-"Initialize pluugin system
+"Status line
+Plug 'itchyny/lightline.vim'
+
+
+"Initialize plugin system
 call plug#end()
 
 "Editor settings
