@@ -22,6 +22,9 @@ Plug 'dense-analysis/ale'
 "Elixir support
 Plug 'elixir-editors/vim-elixir'
 
+"Mail
+Plug 'soywod/himalaya', {'rtp': 'vim'}
+
 " Initialize plugin system
 call plug#end()
 
@@ -82,8 +85,9 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 "FZF settings
-nnoremap <Leader>f :GFiles<CR>
+nnoremap <Leader>f :Files<CR>
 nnoremap <Leader>b :Buffers<CR>
+let $FZF_DEFAULT_COMMAND = 'rg --files'
 
 
 "ALE linting settings
@@ -114,3 +118,8 @@ set completeopt=menu,menuone,preview,noselect,noinsert
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
+
+"Clipboard
+nnoremap Y "+y
+vnoremap Y "+y
+nnoremap yY ^"+y$
